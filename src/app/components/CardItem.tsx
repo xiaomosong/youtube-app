@@ -24,7 +24,7 @@ export default function CardItem() {
             <Button className="min-w-0 p-0 absolute top-[55px] right-[10px] z-[11] w-10 h-10 bg-gray-900/40 hidden group-hover:flex transition-all duration-500 delay-100" radius='full'>
               <MdOutlineSubtitles size={22} color='#fff' />
             </Button>
-            <Image {...item.richItemRenderer?.content.videoRenderer.thumbnail.thumbnails[0]} src={item.richItemRenderer?.content.videoRenderer.thumbnail.thumbnails[0].url} alt={item.richItemRenderer?.content.videoRenderer.thumbnail.thumbnails[0].url} />
+            <Image {...item.richItemRenderer?.content?.videoRenderer?.thumbnail?.thumbnails?.[0]} src={item.richItemRenderer?.content?.videoRenderer?.thumbnail?.thumbnails?.[0]?.url} alt="avatar" />
             <div className="mt-3 flex justify-between items-start">
               <Image className='rounded-full' width={item.richItemRenderer?.content?.videoRenderer?.channelThumbnailSupportedRenderers?.channelThumbnailWithLinkRenderer?.thumbnail?.thumbnails?.[0]?.width ??0 / 2} height={item.richItemRenderer?.content.videoRenderer?.channelThumbnailSupportedRenderers?.channelThumbnailWithLinkRenderer?.thumbnail?.thumbnails?.[0]?.height ??0 / 2} src={item.richItemRenderer?.content.videoRenderer?.channelThumbnailSupportedRenderers?.channelThumbnailWithLinkRenderer?.thumbnail?.thumbnails?.[0]?.url ?? ''} alt="avatar" />
               <div className="w-[80%] flex flex-col ml-2">
