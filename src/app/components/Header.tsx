@@ -6,7 +6,7 @@ import { Avatar, Button, Dropdown, DropdownItem, DropdownMenu, DropdownSection, 
 import { IoIosSearch, IoMdNotificationsOutline } from "react-icons/io";
 import { TbVideoPlus } from "react-icons/tb";
 import { FaGoogle } from "react-icons/fa6";
-import { MdOutlineSwitchAccount,MdOutlinePersonPin, MdOutlineKeyboard } from "react-icons/md";
+import { MdOutlineSwitchAccount, MdOutlinePersonPin, MdOutlineKeyboard } from "react-icons/md";
 import { LuSettings } from "react-icons/lu";
 import { IoLogInOutline } from "react-icons/io5";
 import { MdOutlineFeedback } from "react-icons/md";
@@ -19,13 +19,14 @@ import { PiProhibit } from "react-icons/pi";
 import { IoLanguageSharp } from "react-icons/io5";
 import { ImGithub } from "react-icons/im";
 import { ImYoutube2 } from "react-icons/im";
+import Link from "next/link";
 
-export default function Header(props:any) {
+export default function Header(props: any) {
   return (
     <div className="px-4 pr-8 h-[64px] sticky top-0 z-20 bg-gray-100/80 backdrop-blur-lg dark:bg-gray-950/80">
       <div className="flex items-center justify-between h-full">
         <div className="flex items-center justify-between h-full">
-          <Menu toggleMenu={(state:boolean) => {props.triggerMenu(state)}} />
+          <Menu toggleMenu={(state: boolean) => { props.triggerMenu(state) }} />
           <div className="flex items-center ml-4 gap-2"><FaYoutube size={30} className="text-red-500" /> <ImYoutube2 size={60} className="dark:text-white" /></div>
         </div>
         <div className="search flex items-center gap-3 ">
@@ -38,9 +39,10 @@ export default function Header(props:any) {
         </div>
         <div className="flex items-center">
           <div className="mr-2"><ThemeTrigger /></div>
-          <Button radius="full" className="min-w-0 p-0 w-12 h-12 bg-transparent hover:bg-gray-300/40 dark:hover:bg-gray-400/20">
-            <ImGithub size={22} />
-          </Button>
+          <Link href="https://github.com/xiaomosong/youtube-app" target="_blank">
+            <Button radius="full" className="min-w-0 p-0 w-12 h-12 bg-transparent hover:bg-gray-300/40 dark:hover:bg-gray-400/20">
+              <ImGithub size={22} />
+            </Button></Link>
           <Button radius="full" className="min-w-0 p-0 w-12 h-12 bg-transparent hover:bg-gray-300/40 dark:hover:bg-gray-400/20">
             <IoLanguageSharp size={22} />
           </Button>
