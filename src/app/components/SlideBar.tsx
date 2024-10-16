@@ -21,18 +21,18 @@ export default function SlideBar(props: { menuState: boolean }) {
   return (
     <div className={`flex flex-col mx-3 overflow-auto divide-y-small dark:divide-gray-400/40 gap-2 ${props.menuState ? 'items-center justify-center' : 'w-[240px]'}`}>
       {
-        [{ title: '', id: 1, list: [{ Icon: BiHomeHeart, text: '首页', href: '/' }, { Icon: SiYoutubeshorts, text: 'shorts' },] }, {
-          title: '我的', id: 2, list: [{ Icon: MdHistory, text: '历史记录', href: '/history' },
-          { Icon: RiPlayList2Line, text: '播放列表' }, { Icon: WiTime3, text: '稍后观看' }, { Icon: GoThumbsup, text: '赞过的视频' },]
+        [{ title: '', id: 1, list: [{ Icon: BiHomeHeart, text: '首页', href: '/',iconOpt:{} }, { Icon: SiYoutubeshorts, text: 'shorts', href: '',iconOpt:{} },] }, {
+          title: '我的', id: 2, list: [{ Icon: MdHistory, text: '历史记录', href: '/history',iconOpt:{} },
+          { Icon: RiPlayList2Line, text: '播放列表', href: '',iconOpt:{} }, { Icon: WiTime3, text: '稍后观看', href: '',iconOpt:{} }, { Icon: GoThumbsup, text: '赞过的视频', href: '' ,iconOpt:{}},]
         },
-        { title: '探索', id: 3, list: [{ Icon: FaHotjar, text: '时下流行' }, { Icon: IoMusicalNotesOutline, text: '音乐' }, { Icon: RiMovie2Line, text: '电影' }, { Icon: IoGameControllerOutline, text: '游戏' }, { Icon: GoBroadcast, text: '直播' }, { Icon: GiHeartWings, text: '体育' },] },
+        { title: '探索', id: 3, list: [{ Icon: FaHotjar, text: '时下流行', href: '',iconOpt:{} }, { Icon: IoMusicalNotesOutline, text: '音乐', href: '',iconOpt:{} }, { Icon: RiMovie2Line, text: '电影', href: '',iconOpt:{} }, { Icon: IoGameControllerOutline, text: '游戏', href: '' }, { Icon: GoBroadcast, text: '直播', href: '' }, { Icon: GiHeartWings, text: '体育', href: '' },] },
         {
           title: '', id: 4,
-          list: [{ Icon: LuSettings, text: '设置' }, { Icon: SlFlag, text: '举报记录' }, { Icon: TfiHelpAlt, text: '帮助' }, { Icon: MdOutlineFeedback, text: '发送反馈' },]
+          list: [{ Icon: LuSettings, text: '设置' , href: '',iconOpt:{}}, { Icon: SlFlag, text: '举报记录', href: '',iconOpt:{} }, { Icon: TfiHelpAlt, text: '帮助' , href: '',iconOpt:{}}, { Icon: MdOutlineFeedback, text: '发送反馈', href: '' ,iconOpt:{}},]
         },
         {
           title: '更多 YouTube 产品与功能', id: 5,
-          list: [{ Icon: FaYoutube,iconOpt:{className: 'text-red-500'}, text: 'YouTube  Premium' }, { Icon: SiNeteasecloudmusic,iconOpt:{className: 'text-red-500'}, text: 'YouTube Music' }, { Icon: SiYoutubekids,iconOpt:{className: 'text-red-500'}, text: 'YouTube Kids' }, ]
+          list: [{ Icon: FaYoutube,iconOpt:{className: 'text-red-500'}, text: 'YouTube  Premium', href:'' }, { Icon: SiNeteasecloudmusic,iconOpt:{className: 'text-red-500'}, text: 'YouTube Music', href:'' }, { Icon: SiYoutubekids,iconOpt:{className: 'text-red-500'}, text: 'YouTube Kids', href:'' }, ]
         },
         ].map((i, index) => (
           <div className="flex flex-col pt-2" key={i.id}>
