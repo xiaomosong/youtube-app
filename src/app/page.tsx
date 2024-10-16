@@ -12,16 +12,16 @@ export default function App({ children }: Readonly<{
   const pathname = usePathname()
   const [state, setMenuState] = useState(false)
   // 根据操作系统类型添加或移除CSS类
-  function toggleScrollbarStyle() {
-    if (navigator?.userAgentData?.platform === 'Windows') {
-      document.documentElement.classList.add('windows');
-    } else {
-      document.documentElement.classList.remove('windows');
-    }
-  }
+  // function toggleScrollbarStyle() {
+  //   if (navigator?.userAgentData?.platform === 'Windows') {
+  //     document.documentElement.classList.add('windows');
+  //   } else {
+  //     document.documentElement.classList.remove('windows');
+  //   }
+  // }
   useEffect(() => {
     // 初始化
-    toggleScrollbarStyle();
+    // toggleScrollbarStyle();
   }, [])
   return (
     <div className="box-border h-screen min-h-screen w-screen overflow-auto dark:bg-gray-950 dark:text-gray-50">
