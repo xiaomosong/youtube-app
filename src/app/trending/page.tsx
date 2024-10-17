@@ -98,7 +98,7 @@ export default function Trending() {
           </Tab>
           <Tab key="movie" title="电影">
             <Card>
-              电影
+            电影
             </Card>
           </Tab>
         </Tabs>
