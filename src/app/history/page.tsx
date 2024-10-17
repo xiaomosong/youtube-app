@@ -110,8 +110,8 @@ export default function History() {
         </div>
         <div className="fixed right-[140px] w-[300px]">
           <div className="search flex gap-3 items-center border-b-1 py-2 transition-all duration-200 focus-within:border-b-2 border-b-slate-950">
-            <IoSearch size={20} />
-            <input placeholder='搜索观看记录' className='w-full bg-transparent border-none outline-none ' />
+            <Button className='min-w-0 w-10 h-10 p-0 bg-transparent hover:bg-gray-200/80 dark:bg-transparent dark:hover:bg-gray-400/80' radius='full'><IoSearch size={20} /></Button>
+            <input placeholder='搜索观看记录' className='bg-transparent border-none outline-none ' />
           </div>
           <div className="flex flex-col gap-1 py-3 items-start">
             <Button className='bg-transparent hover:bg-gray-200/80 dark:bg-transparent dark:hover:bg-gray-400/80' radius='full' onClick={() => openModal('clear')}><RiDeleteBin6Line size={18} /> 清除所有观看记录</Button>

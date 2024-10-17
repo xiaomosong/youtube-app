@@ -19,10 +19,10 @@ export default function App({ children }: Readonly<{
   //     document.documentElement.classList.remove('windows');
   //   }
   // }
-  useEffect(() => {
-    // 初始化
-    // toggleScrollbarStyle();
-  }, [])
+  // useEffect(() => {
+  //   // 初始化
+  //   toggleScrollbarStyle();
+  // }, [])
   return (
     <div className="box-border h-screen min-h-screen w-screen overflow-auto dark:bg-gray-950 dark:text-gray-50">
       <Header triggerMenu={(menuState: boolean) => { setMenuState(menuState) }} />

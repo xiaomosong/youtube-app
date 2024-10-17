@@ -27,7 +27,7 @@ export default function CardItem() {
             <Image {...item.richItemRenderer?.content?.videoRenderer?.thumbnail?.thumbnails?.[0]} src={item.richItemRenderer?.content?.videoRenderer?.thumbnail?.thumbnails?.[0]?.url} alt="avatar" />
             <div className="mt-3 flex justify-between items-start">
               <Image className='rounded-full' width={item.richItemRenderer?.content?.videoRenderer?.channelThumbnailSupportedRenderers?.channelThumbnailWithLinkRenderer?.thumbnail?.thumbnails?.[0]?.width ??0 / 2} height={item.richItemRenderer?.content?.videoRenderer?.channelThumbnailSupportedRenderers?.channelThumbnailWithLinkRenderer?.thumbnail?.thumbnails?.[0]?.height ??0 / 2} src={item.richItemRenderer?.content?.videoRenderer?.channelThumbnailSupportedRenderers?.channelThumbnailWithLinkRenderer?.thumbnail?.thumbnails?.[0]?.url ?? ''} alt="avatar" />
-              <div className="w-[80%] flex flex-col ml-2">
+              <div className="w-2/3 flex flex-col ml-2">
                 <div className="line-clamp-2">{item.richItemRenderer?.content.videoRenderer.title.runs[0].text}</div>
                 <div className="text-gray-500 dark:text-gray-300 text-sm">
                   {item.richItemRenderer?.content.videoRenderer.longBylineText.runs[0].text}
