@@ -94,13 +94,11 @@ export default function Trending() {
             </div>
           </Tab>
           <Tab key="game" title="游戏">
-            <Card>
-              helo
-            </Card>
+          游戏
           </Tab>
           <Tab key="movie" title="电影">
             <Card>
-              helo
+              电影
             </Card>
           </Tab>
         </Tabs>
