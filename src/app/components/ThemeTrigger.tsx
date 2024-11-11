@@ -12,7 +12,7 @@ export default function ThemeTrigger() {
 
   if (!mounted) return null
   return (
-    <label className="theme-switch">
+    <label className="theme-switch ">
       <input type="checkbox" className="theme-switch__checkbox" checked={checked} onChange={() => { setChecked(!checked); setTheme(!checked ? 'dark' : 'light') }} />
       <div className="theme-switch__container">
         <div className="theme-switch__clouds"></div>

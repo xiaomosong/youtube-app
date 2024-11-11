@@ -1,5 +1,5 @@
 'use client'
-import { Dropdown, Button, DropdownMenu, DropdownItem, DropdownTrigger,Link } from "@nextui-org/react";
+import { Dropdown, Button, DropdownMenu, DropdownItem, DropdownTrigger, Link } from "@nextui-org/react";
 import { BiHomeHeart } from "react-icons/bi";
 import { SiYoutubeshorts } from "react-icons/si";
 import { MdHistory, MdOutlineFeedback } from "react-icons/md";
@@ -18,38 +18,39 @@ import { SlFlag } from "react-icons/sl";
 import { SiNeteasecloudmusic } from "react-icons/si";
 import { SiYoutubekids } from "react-icons/si";
 import { MdOutlineSubscriptions } from "react-icons/md";
+import { PiBroadcast } from "react-icons/pi";
 
 export default function SlideBar(props: { menuState: boolean }) {
   return (
-    <div className={`flex flex-col mx-3 divide-y-small dark:divide-gray-400/40 gap-2 ${props.menuState ? 'items-center justify-center' : 'w-[240px]'}`}>
+    <div className={`flex flex-col mx-3 divide-y-small dark:divide-gray-400/40 gap-2 ${props.menuState ? 'items-center justify-center xl:items-center xl:justify-center' : 'w-[64px]'} w-[64px] xl:w-[240px] xl:items-stretch xl:justify-start`}>
       {
-        [{ title: '', id: 1, list: [{ Icon: BiHomeHeart, text: '首页', href: '/',iconOpt:{} }, { Icon: SiYoutubeshorts, text: 'shorts', href: '',iconOpt:{} },{ Icon: MdOutlineSubscriptions, text: '订阅', href: '',iconOpt:{} },] }, {
-          title: '我的', id: 2, list: [{ Icon: MdHistory, text: '历史记录', href: '/history',iconOpt:{} },
-          { Icon: RiPlayList2Line, text: '播放列表', href: '',iconOpt:{} }, { Icon: WiTime3, text: '稍后观看', href: '',iconOpt:{} }, { Icon: GoThumbsup, text: '赞过的视频', href: '' ,iconOpt:{}},]
+        [{ title: '', id: 1, list: [{ Icon: BiHomeHeart, text: '首页', href: '/', iconOpt: {} }, { Icon: SiYoutubeshorts, text: 'shorts', href: '', iconOpt: {} }, { Icon: MdOutlineSubscriptions, text: '订阅', href: '', iconOpt: {} },] }, {
+          title: '我的', id: 2, list: [{ Icon: MdHistory, text: '历史记录', href: '/history', iconOpt: {} },
+          { Icon: RiPlayList2Line, text: '播放列表', href: '', iconOpt: {} }, { Icon: WiTime3, text: '稍后观看', href: '', iconOpt: {} }, { Icon: GoThumbsup, text: '赞过的视频', href: '', iconOpt: {} },]
         },
-        { title: '探索', id: 3, list: [{ Icon: FaHotjar, text: '时下流行', href: '/trending',iconOpt:{} }, { Icon: IoMusicalNotesOutline, text: '音乐', href: '',iconOpt:{} }, { Icon: RiMovie2Line, text: '电影', href: '',iconOpt:{} }, { Icon: IoGameControllerOutline, text: '游戏', href: '' }, { Icon: GoBroadcast, text: '直播', href: '' }, { Icon: GiHeartWings, text: '体育', href: '' },] },
+        { title: '探索', id: 3, list: [{ Icon: FaHotjar, text: '时下流行', href: '/trending', iconOpt: {} }, { Icon: IoMusicalNotesOutline, text: '音乐', href: '', iconOpt: {} }, { Icon: RiMovie2Line, text: '电影', href: '', iconOpt: {} }, { Icon: PiBroadcast, text: '直播', href: '' }, { Icon: IoGameControllerOutline, text: '游戏', href: '' }, { Icon: GoBroadcast, text: '直播', href: '' }, { Icon: GiHeartWings, text: '体育', href: '' },] },
         {
           title: '', id: 4,
-          list: [{ Icon: LuSettings, text: '设置' , href: '',iconOpt:{}}, { Icon: SlFlag, text: '举报记录', href: '',iconOpt:{} }, { Icon: TfiHelpAlt, text: '帮助' , href: '',iconOpt:{}}, { Icon: MdOutlineFeedback, text: '发送反馈', href: '' ,iconOpt:{}},]
+          list: [{ Icon: LuSettings, text: '设置', href: '', iconOpt: {} }, { Icon: SlFlag, text: '举报记录', href: '', iconOpt: {} }, { Icon: TfiHelpAlt, text: '帮助', href: '', iconOpt: {} }, { Icon: MdOutlineFeedback, text: '发送反馈', href: '', iconOpt: {} },]
         },
         {
           title: '更多 YouTube 产品与功能', id: 5,
-          list: [{ Icon: FaYoutube,iconOpt:{className: 'text-red-500'}, text: 'YouTube  Premium', href:'' }, { Icon: SiNeteasecloudmusic,iconOpt:{className: 'text-red-500'}, text: 'YouTube Music', href:'' }, { Icon: SiYoutubekids,iconOpt:{className: 'text-red-500'}, text: 'YouTube Kids', href:'' }, ]
+          list: [{ Icon: FaYoutube, iconOpt: { className: 'text-red-500' }, text: 'YouTube  Premium', href: '' }, { Icon: SiNeteasecloudmusic, iconOpt: { className: 'text-red-500' }, text: 'YouTube Music', href: '' }, { Icon: SiYoutubekids, iconOpt: { className: 'text-red-500' }, text: 'YouTube Kids', href: '' },]
         },
         ].map((i, index) => (
           <div className="flex flex-col pt-2" key={i.id}>
-            {i.title && !props.menuState && <Button className="w-full justify-start" variant="light">{i.title}</Button>}
+            {i.title && <div className="hidden xl:block">{!props.menuState && <Button className="w-full justify-start" variant="light">{i.title}</Button>}</div>}
             {
               i.list.map(item => (
                 <Dropdown key={item.text}>
                   <DropdownTrigger>
-                  <Link href={item.href} className="">
-                    <Button
-                      variant="light"
-                      className={`min-w-0 ${props.menuState ? '!w-14 !h-12 px-2' : '!justify-start gap-5 px-4 w-full'}    border-1 border-transparent hover:border-1`}
-                    >
-                      <item.Icon size={props.menuState ? 22 : 22} {...item?.iconOpt}/> {!props.menuState && item.text}
-                    </Button></Link>
+                    <Link href={item.href} className="">
+                      <Button
+                        variant="light"
+                        className={`min-w-0 ${props.menuState ? '!w-14 !h-12 xl:!w-14 xl:!h-12 px-2 xl:px-4' : '!justify-start px-2 xl:!justify-start xl:px-4 xl:w-full w-full'} border-1 border-transparent hover:border-1`}
+                      >
+                        <item.Icon size={22} {...item?.iconOpt} /> <span className="hidden xl:inline">{!props.menuState && item.text}</span>
+                      </Button></Link>
                   </DropdownTrigger>
                   <div className=""></div>
                   {/* <DropdownMenu variant="faded" aria-label="Dropdown menu with icons">
@@ -87,7 +88,7 @@ export default function SlideBar(props: { menuState: boolean }) {
         ))
       }
       {!props.menuState && (
-        <div className="py-2 px-4">
+        <div className="py-2 px-4 hidden xl:block">
           <div className="flex flex-wrap w-full text-gray-500 dark:text-gray-300 gap-2 text-sm">
             <Link href="#" className="text-gray-500 dark:text-gray-300 text-sm">关于</Link>
             <Link href="#" className="text-gray-500 dark:text-gray-300 text-sm">新闻</Link>

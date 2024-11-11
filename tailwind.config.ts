@@ -10,6 +10,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        '3xl': '1600px',
+        '4xl': '1800px',
+        'xs': '475px',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

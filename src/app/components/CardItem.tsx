@@ -16,7 +16,7 @@ import { SlFlag } from "react-icons/sl";
 import { mockList } from './mock'
 export default function CardItem() {
   return (
-    <div className="gap-x-3 gap-y-8 grid grid-cols-5 h-full ">
+    <div className="gap-x-3 xs:gap-y-4 md:gap-y-4 xl:gap-y-5 2xl:gap-y-5 3xl:gap-y-8 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 h-full ">
       {mockList.map((item, index) => (
         <div className=' hover:bg-red-200/30 hover:ring-8 group hover:cursor-pointer hover:ring-red-200/30 rounded-xl transition-all duration-200' key={index}>
           <div className="overflow-visible p-0 relative">
